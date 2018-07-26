@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ManageInventoryComponent } from './components/manage-inventory/manage-inventory.component';
 import { ShopProductsComponent } from './components/shop-products/shop-products.component';
+import { NavigationHeaderComponent } from './components/navigation-header/navigation-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ManageInventoryComponent,
-    ShopProductsComponent
+    ShopProductsComponent,
+    NavigationHeaderComponent
   ],
   imports: [
     BrowserModule,
