@@ -4,10 +4,22 @@ import { RouterModule, Router } from '@angular/router';
 import { HomeComponent } from '../components/home/home.component';
 import { ManageInventoryComponent } from '../components/manage-inventory/manage-inventory.component';
 import { ShopProductsComponent } from '../components/shop-products/shop-products.component';
+import { NewProductComponent } from '../components/new-product/new-product.component';
+import { ProductDetailsComponent } from '../components/product-details/product-details.component';
+import { EditProductComponent } from '../components/edit-product/edit-product.component';
+import { PlaceholderComponent } from '../components/placeholder/placeholder.component';
+import { LeaveFormGuard } from '../guards/leave-form/leave-form.guard';
 
 const appRoutes = [
   { path: 'home' , component: HomeComponent },
-  { path:'manage-inventory', component: ManageInventoryComponent },
+  { path:'manage-inventory', component: ManageInventoryComponent,
+    children:[
+    { path:'new', component: NewProductComponent , canDeactivate: [LeaveFormGuard]},      
+    { path:':id', component: ProductDetailsComponent },
+    { path:':id/edit', component: EditProductComponent, canDeactivate: [LeaveFormGuard] },
+    { path:'', component: PlaceholderComponent }
+  ]
+  },
   { path:'shop-products', component: ShopProductsComponent },  
   { path:'', redirectTo:'/home', pathMatch: 'full'},
 	{ path:'**', redirectTo:'/home', pathMatch: 'full'}
