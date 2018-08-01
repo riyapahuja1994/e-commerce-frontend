@@ -8,7 +8,7 @@ import { NewProductComponent } from '../components/new-product/new-product.compo
 import { ProductDetailsComponent } from '../components/product-details/product-details.component';
 import { EditProductComponent } from '../components/edit-product/edit-product.component';
 import { PlaceholderComponent } from '../components/placeholder/placeholder.component';
-import { LeaveFormGuard } from '../guards/leave-form/leave-form.guard';
+import { LeaveFormGuard } from '../guards/leave-form.guard';
 
 const appRoutes = [
   { path: 'home' , component: HomeComponent },
