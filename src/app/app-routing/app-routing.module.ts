@@ -7,17 +7,17 @@ import { ShopProductsComponent } from '../components/shop-products/shop-products
 import { NewProductComponent } from '../components/new-product/new-product.component';
 import { ProductDetailsComponent } from '../components/product-details/product-details.component';
 import { EditProductComponent } from '../components/edit-product/edit-product.component';
-import { PlaceholderComponent } from '../components/placeholder/placeholder.component';
+import { InventoryProductListComponent } from '../components/inventory-product-list/inventory-product-list.component';
 import { LeaveFormGuard } from '../guards/leave-form.guard';
 
 const appRoutes = [
   { path: 'home' , component: HomeComponent },
   { path:'manage-inventory', component: ManageInventoryComponent,
     children:[
-    { path:'new', component: NewProductComponent , canDeactivate: [LeaveFormGuard]},      
+    { path:'new', component: NewProductComponent },      
     { path:':id', component: ProductDetailsComponent },
     { path:':id/edit', component: EditProductComponent, canDeactivate: [LeaveFormGuard] },
-    { path:'', component: PlaceholderComponent }
+    { path:'', component: InventoryProductListComponent }
   ]
   },
   { path:'shop-products', component: ShopProductsComponent },  

@@ -11,7 +11,7 @@ import { NavigationHeaderComponent } from './components/navigation-header/naviga
 import { NewProductComponent } from './components/new-product/new-product.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
-import { PlaceholderComponent } from './components/placeholder/placeholder.component';
+import { InventoryProductListComponent } from './components/inventory-product-list/inventory-product-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { PlaceholderComponent } from './components/placeholder/placeholder.compo
     NewProductComponent,
     ProductDetailsComponent,
     EditProductComponent,
-    PlaceholderComponent
+    InventoryProductListComponent
   ],
   imports: [
     BrowserModule,

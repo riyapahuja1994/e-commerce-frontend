@@ -1,7 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#330033; padding-left:3rem; padding-right:3rem;">
   <a class="navbar-brand" style="color:white;" routerLink='#'>Home</a>
     <div class="nav navbar-nav mr-auto">
-      <a RouterLinkActive="active" class="nav-item nav-link" style="color:white;" routerLink='/manage-inventory'>Manage Inventory</a>
+      <!-- <a RouterLinkActive="active" class="nav-item nav-link" style="color:white;" routerLink='/manage-inventory'>Manage Inventory</a> -->
+      <div class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle" style="color:white;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Manage Inventory
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:#4d004d;">
+          <a RouterLinkActive="active" class="dropdown-item" routerLink='/manage-inventory' style="color:white;">Product List</a>
+          <a RouterLinkActive="active" class="dropdown-item" routerLink='/manage-inventory/new' style="color:white;">Add New Product</a>
+        </div>
+      </div>
       <a RouterLinkActive="active" class="nav-item nav-link" style="color:white;" routerLink='/shop-products'>Continue Shopping</a>
     </div>
     <form class="form-inline my-2 my-lg-0">
