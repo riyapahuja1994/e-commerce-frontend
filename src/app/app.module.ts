@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -28,7 +29,8 @@ import { InventoryProductListComponent } from './components/inventory-product-li
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
