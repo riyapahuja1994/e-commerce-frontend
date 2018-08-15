@@ -1,126 +1,112 @@
-<p>
-  new-product works!
-</p>
-<br>
-	<div class="card-body">
-	<form #userForm="ngForm">
-		<div class="form-group">
-			<label for="id">Id</label>
-				<input [readonly]="rdonly" required class="form-control" type="text" name="id" #Tid="ngModel" [(ngModel)]="id">
+<div class="inventory-bg">
+	<h4 class="new-product-inventory-header">Add New Product to Inventory</h4>
+	<div class="card-body" style="display: flex">
+		<form #addProductForm="ngForm" style="margin-right: 2.5rem; width:50%;">
+			<div class="form-group">
+				<label for="id">Product Id</label>
+				<input [readonly]="rdonly" required class="form-control new-product-input-width" type="number" name="product_id" #Tid="ngModel"
+				 [(ngModel)]="product_id">
 				<div *ngIf="Tid.touched && Tid.invalid" class="alert-error">
-						<p *ngIf="Tid.errors.required">Id is required.</p>
-					</div>
-		</div>
-		<div class="form-group">
-			<label for="name">Name</label>
-				<input [readonly]="rdonly" required class="form-control" type="text" name="name" [(ngModel)]="name" #Tname="ngModel">
+					<p *ngIf="Tid.errors.required">Product Id is required.</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="name">Product Name</label>
+				<input [readonly]="rdonly" required class="form-control new-product-input-width" type="text" name="product_name" [(ngModel)]="product_name"
+				 #Tname="ngModel">
 				<div *ngIf="Tname.touched && Tname.invalid" class="alert-error">
-					<p *ngIf="Tname.errors.required">Name is required.</p>
+					<p *ngIf="Tname.errors.required">Product Name is required.</p>
 				</div>
-		</div>
-		<div class="form-group">
-			<label for="username">Username</label>
-				<input [readonly]="rdonly" required class="form-control" type="text" name="username" #Tusername="ngModel" [(ngModel)]="username">
-				<div *ngIf="Tusername.touched && Tusername.invalid" class="alert-error">
-						<p *ngIf="Tusername.errors.required">Username is required.</p>
-					</div>
-		</div>
-		<div class="form-group">
+			</div>
+			<div class="form-group">
+				<label for="productImage">Product Image</label>
+				<input [readonly]="rdonly" required class="form-control new-product-input-width" type="text" name="product_image" #TproductImage="ngModel"
+				 [(ngModel)]="product_image">
+				<div *ngIf="TproductImage.touched && TproductImage.invalid" class="alert-error">
+					<p *ngIf="TproductImage.errors.required">Product Image is required.</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="category">Product Category</label>
+				<input [readonly]="rdonly" required class="form-control new-product-input-width" type="text" name="product_category" #TproductCategory="ngModel"
+				 [(ngModel)]="product_category">
+				<div *ngIf="TproductCategory.touched && TproductCategory.invalid" class="alert-error">
+					<p *ngIf="TproductCategory.errors.required">Product Category is required.</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="details">Product Details</label>
+				<input [readonly]="rdonly" required class="form-control new-product-input-width" type="text" name="product_details" #TproductDetails="ngModel"
+				 [(ngModel)]="product_details">
+				<div *ngIf="TproductDetails.touched && TproductDetails.invalid" class="alert-error">
+					<p *ngIf="TproductDetails.errors.required">Product Details is required.</p>
+				</div>
+			</div>
+			<!-- <div class="form-group">
 			<label for="email">Email</label>
-				<input [readonly]="rdonly" required email class="form-control" type="email" name="email" [(ngModel)]="email" #Temail="ngModel">
-				<div *ngIf="Temail.touched && Temail.invalid" class="alert-error">
-					<p *ngIf="Temail.errors.required">Email is required.</p>
-					<p *ngIf="Temail.errors.email">Please enter a valid email.</p>
-				</div>								
-		</div>
-		<div class="form-group">
-			<label for="phone">Phone</label>
-				<input [readonly]="rdonly" required class="form-control" type="text" name="phone" #Tphone="ngModel" [(ngModel)]="phone">
-				<div *ngIf="Tphone.touched && Tphone.invalid" class="alert-error">
-						<p *ngIf="Tphone.errors.required">Phone is required.</p>
-					</div>
-		</div>
-		<div class="form-group">
-			<label for="website">Website</label>
-				<input [readonly]="rdonly" class="form-control" type="text" name="website" ngModel [(ngModel)]="website">
-		</div>
-
-		<div ngModelGroup="address">
-			<div class="form-group">
-				<label for="street">Street</label>
-					<input [readonly]="rdonly" required class="form-control" type="text" name="street" #Tstreet="ngModel" [(ngModel)]="street">
-					<div *ngIf="Tstreet.touched && Tstreet.invalid" class="alert-error">
-							<p *ngIf="Tstreet.errors.required">Street is required.</p>
-					</div>
+			<input [readonly]="rdonly" required email class="form-control new-product-input-width" type="email" name="email" [(ngModel)]="email" #Temail="ngModel">
+			<div *ngIf="Temail.touched && Temail.invalid" class="alert-error">
+				<p *ngIf="Temail.errors.required">Email is required.</p>
+				<p *ngIf="Temail.errors.email">Please enter a valid email.</p>
 			</div>
+		</div> -->
 			<div class="form-group">
-				<label for="suite">Suite</label>
-					<input [readonly]="rdonly" required  class="form-control" type="text" name="suite" #Tsuite="ngModel" [(ngModel)]="suite">
-					<div *ngIf="Tsuite.touched && Tsuite.invalid" class="alert-error">
-							<p *ngIf="Tsuite.errors.required">Suite is required.</p>
-						</div>
-			</div>
-			<div class="form-group">
-				<label for="city">City</label>
-					<input [readonly]="rdonly" required class="form-control" type="text" name="city" #Tcity="ngModel" [(ngModel)]="city">
-					<div *ngIf="Tcity.touched && Tcity.invalid" class="alert-error">
-							<p *ngIf="Tcity.errors.required">City is required.</p>
-						</div>
-			</div>
-			<div class="form-group">
-				<label for="zipcode">Zipcode</label>
-					<input [readonly]="rdonly" required class="form-control" type="text" name="zipcode" #Tzip="ngModel" [(ngModel)]="zipcode">
-					<div *ngIf="Tzip.touched && Tzip.invalid" class="alert-error">
-							<p *ngIf="Tzip.errors.required">Zipcode is required.</p>
-						</div>
-			</div>
-
-			<div ngModelGroup="geoCode">	
-				<div class="form-group">
-					<label for="lat">Latitude</label>
-						<input [readonly]="rdonly" required class="form-control" type="text" name="lat" #Tlat="ngModel" [(ngModel)]="lat">
-						<div *ngIf="Tlat.touched && Tlat.invalid" class="alert-error">
-								<p *ngIf="Tlat.errors.required">Name is required.</p>
-							</div>
+				<label for="selling_price">Price</label>
+				<input [readonly]="rdonly" required class="form-control new-product-input-width" type="number" name="product_price" #TSP="ngModel"
+				 [(ngModel)]="product_price">
+				<div *ngIf="TSP.touched && TSP.invalid" class="alert-error">
+					<p *ngIf="TSP.errors.required">Selling Price is required.</p>
 				</div>
-				<div class="form-group">
-					<label for="lng">Longitude</label>
-						<input [readonly]="rdonly" required class="form-control" type="text" name="lng" #Tlng="ngModel" [(ngModel)]="lng">
-						<div *ngIf="Tlng.touched && Tlng.invalid" class="alert-error">
-								<p *ngIf="Tlngrs.required">Longitude is required.</p>
-							</div>
+			</div>
+			<div class="form-group">
+				<label for="cost_price">Cost Price</label>
+				<input [readonly]="rdonly" required class="form-control new-product-input-width" type="number" name="product_cost_price"
+				 #TCP="ngModel" [(ngModel)]="product_cost_price">
+				<div *ngIf="TCP.touched && TCP.invalid" class="alert-error">
+					<p *ngIf="TCP.errors.required">Cost Price is required.</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="discount">Discount</label>
+				<input [readonly]="rdonly" required class="form-control new-product-input-width" type="number" name="product_discount" #Tdiscount="ngModel"
+				 [(ngModel)]="product_discount">
+				<div *ngIf="Tdiscount.touched && Tdiscount.invalid" class="alert-error">
+					<p *ngIf="Tdiscount.errors.required">Discount is required.</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="quantity">Quantity</label>
+				<input [readonly]="rdonly" required class="form-control new-product-input-width" type="number" name="product_quantity" #Tquantity="ngModel"
+				 [(ngModel)]="product_quantity">
+				<div *ngIf="Tquantity.touched && Tquantity.invalid" class="alert-error">
+					<p *ngIf="Tquantity.errors.required">Quantity is required.</p>
 				</div>
 			</div>
 
-		</div>
-		
-		<div ngModelGroup="company">
+			<!-- <div ngModelGroup="geoCode">
 			<div class="form-group">
-				<label for="companyName">Company Name</label>
-					<input [readonly]="rdonly" required class="form-control" type="text" name="companyName" #TcomName="ngModel" [(ngModel)]="companyName">
-					<div *ngIf="TcomName.touched && TcomName.invalid" class="alert-error">
-							<p *ngIf="TcomName.errors.required">Company Name is required.</p>
-						</div>
+				<label for="lat">Latitude</label>
+				<input [readonly]="rdonly" required class="form-control new-product-input-width" type="text" name="lat" #Tlat="ngModel" [(ngModel)]="lat">
+				<div *ngIf="Tlat.touched && Tlat.invalid" class="alert-error">
+					<p *ngIf="Tlat.errors.required">Name is required.</p>
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="catchPhrase">CatchPhrase</label>
-					<input [readonly]="rdonly" required class="form-control" type="text" name="catchPhrase" #Tcp="ngModel" [(ngModel)]="catchPhrase">
-					<div *ngIf="Tcp.touched && Tcp.invalid" class="alert-error">
-							<p *ngIf="Tcp.errors.required">CatchPhrase is required.</p>
-						</div>
+				<label for="lng">Longitude</label>
+				<input [readonly]="rdonly" required class="form-control new-product-input-width" type="text" name="lng" #Tlng="ngModel" [(ngModel)]="lng">
+				<div *ngIf="Tlng.touched && Tlng.invalid" class="alert-error">
+					<p *ngIf="Tlngrs.required">Longitude is required.</p>
+				</div>
 			</div>
-			<div class="form-group">
-				<label for="bs">BS</label>
-					<input [readonly]="rdonly" required class="form-control" type="text" name="bs" #Tbs="ngModel" [(ngModel)]="bs">
-					<div *ngIf="Tbs.touched && Tbs.invalid" class="alert-error">
-							<p *ngIf="Tbs.errors.required">BS is required.</p>
-						</div>
-			</div>
-		</div>
+		</div> -->
 
-		<button class="btn btn-primary" (click)="editForm(userForm)" [hidden]="showEdits">Edit</button>
-		<button class="btn btn-success" type="submit" (click)="submitForm(userForm)" [disabled]="userForm.invalid" [hidden]="!showEdits">Update</button>
-		<button class="btn btn-danger" (click)="cancelForm()" [hidden]="!showEdits">Cancel</button>
-		<button class="btn btn-primary" type="reset" [hidden]="!showEdits">Clear</button>
-	</form>
+
+			<button class="btn btn-success" type="submit" (click)="submitForm(addProductForm)" [disabled]="addProductForm.invalid">Submit</button>
+		</form>
+		<div class="new-product-image-div">
+			<div *ngIf="product_image!=undefined && product_image!=''">
+				<img class="new-product-image" src={{product_image}} alt="You have not entered the coreect Image Url or there might be some other Issue.">
+			</div>
+		</div>
+	</div>
 </div>

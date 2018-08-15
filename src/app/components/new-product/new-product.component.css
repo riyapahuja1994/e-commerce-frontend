@@ -1,0 +1,29 @@
+.inventory-bg {
+  background-image: url(../../../assets/inventory-management-1.jpg);
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.2);
+  background-blend-mode: lighten;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 3rem;
+  background-position-x: -5rem;
+}
+.new-product-inventory-header {
+  padding-top: 1.25rem;
+  padding-left: 1.25rem;
+  margin-bottom: 0;
+}
+
+.new-product-input-width {
+  width: 100%;
+}
+.new-product-image {
+  width: 100%;
+  height: auto;
+}
+.new-product-image-div {
+  width: 45%;
+  align-self: flex-start;
+  margin-top: 10rem;
+}
