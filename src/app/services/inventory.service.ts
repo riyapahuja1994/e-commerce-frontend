@@ -7,11 +7,13 @@ import { map } from "rxjs/operators";
 })
 export class InventoryService {
   private _rootUrl: string =
-    "https://e-commerce-backend.herokuapp.com/inventory_product";
+    "https://e-commerce-backend.herokuapp.com/inventory_products";
 
   constructor(private HttpClient: HttpClient) {}
 
-  getInventoryProducts() {}
+  getInventoryProducts(): Observable<any> {
+    return this.HttpClient.get(this._rootUrl);
+  }
 
   getInventoryProductById() {}
 
