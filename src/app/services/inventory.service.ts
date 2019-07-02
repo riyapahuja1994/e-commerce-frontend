@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { IinventoryProduct } from "../interfaces/iinventory-product";
 @Injectable({
   providedIn: "root"
 })
@@ -17,7 +18,7 @@ export class InventoryService {
 
   getInventoryProductById() {}
 
-  addNewInventoryProduct(inventoryProduct: JSON): Observable<any> {
+  addNewInventoryProduct(inventoryProduct: IinventoryProduct): Observable<any> {
     console.log(inventoryProduct);
     return this.HttpClient.post(this._rootUrl, inventoryProduct);
   }
